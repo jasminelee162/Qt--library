@@ -1,0 +1,53 @@
+-- 用户表 (添加角色字段)
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    role INT NOT NULL DEFAULT 0  -- 0 表示普通用户，1 表示管理员
+);
+
+-- 图书表
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    publisher VARCHAR(100),
+    year INT,
+    total_count INT,
+    available_count INT
+);
+ALTER TABLE books
+ADD COLUMN cover_image_url VARCHAR(255),   -- 图书封面地址
+ADD COLUMN description TEXT;               -- 图书简介
+
+
+-- 借阅信息表
+CREATE TABLE borrow_info (
+    borrow_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    book_id INT,
+    borrow_date DATE,
+    return_date DATE,
+    due_date DATE,
+    FOREIGN KEY(user_id) REFERENCES users(user_id),
+    FOREIGN KEY(book_id) REFERENCES books(book_id)
+);
+
+-- 通知表
+CREATE TABLE notifications (
+    notification_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    publish_date DATETIME
+);
+
+CREATE TABLE user_notifications (
+    user_id INT NOT NULL,
+    notification_id INT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,   -- 标记该用户是否已查看此通知
+    viewed_at DATETIME,              -- 记录用户查看通知的时间
+    PRIMARY KEY (user_id, notification_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (notification_id) REFERENCES notifications(notification_id)
+);

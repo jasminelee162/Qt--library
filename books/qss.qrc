@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>css/index.css</file>
+        <file>icon/gl.png</file>
+        <file>icon/Mybooks.png</file>
+        <file>icon/Mytongzhi.png</file>
+        <file>icon/one_person.png</file>
+        <file>icon/help.png</file>
+        <file>icon/touxiang.png</file>
+        <file>icon/bk.png</file>
+        <file>icon/title.png</file>
+        <file>icon/pswLabel.PNG</file>
+        <file>icon/unLabel.PNG</file>
+        <file>icon/findPswLabel.PNG</file>
+        <file>icon/regLabel.PNG</file>
+        <file>icon/adminLabel.PNG</file>
+        <file>icon/emailLabel.PNG</file>
+        <file>icon/borrowLabel.PNG</file>
+        <file>icon/schoolLogo.png</file>
+        <file>icon/bg.jpg</file>
+        <file>icon/eye_close.png</file>
+        <file>icon/eye_open.png</file>
+        <file>icon/chaguan.jpg</file>
+        <file>icon/huozhe.jpg</file>
+        <file>icon/luotuo.jpg</file>
+        <file>icon/nahan.jpg</file>
+        <file>icon/panghuang.jpg</file>
+        <file>icon/xiongdi.jpg</file>
+        <file>icon/zhaohua.jpg</file>
+        <file>Debug/debug/help.txt</file>
+        <file>icon/admin.png</file>
+        <file>icon/user.png</file>
+        <file>icon/BACKGROUND.JPG</file>
+    </qresource>
+</RCC>
